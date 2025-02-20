@@ -13,30 +13,17 @@
                     <a href="{{route('department.index')}}" class="btn btn-danger float-right">Click me</a>
                 </div>
                 <div class="card-body">
-                    <form action="{{route('department.update', $employee->emp_id)}}" method="post">
+                    <form action="{{route('department.update', $department->dep_id)}}" method="post">
                         @csrf
                         @method("PUT")
                         <div class="mb-5">
-                            <label for="name">Name: </label>
-                            <input type="text" name="name" id="name" class="form-control" value="{{$employee->name}}">
+                            <label for="name">Department Name: </label>
+                            <input type="text" name="dep_name" id="name" class="form-control" value="{{$department->dep_name}}">
                             @error('name')
                                 <span class="text-danger">
                                     {{$message}}
                                 </span>
                             @enderror
-                        </div>
-                        <div class="mb-5">
-                            <label for="address">Address: </label>
-                            <textarea name="address" id="address" class="form-control" rows="3">{{$employee->address}}</textarea>
-                            @error('address')
-                                <span class="text-danger">
-                                    {{$message}}
-                                </span>
-                            @enderror
-                        </div>
-                        <div class="mb-5">
-                            <label for="date_of_join">Date of Join: </label>
-                            <input type="date" name="date_of_join" id="" value="{{$employee->date_of_join}} ">
                         </div>
                         <div class="mb-5">
                             <button type="submit" class="btn btn-primary">Submit</button>

@@ -12,28 +12,14 @@
                     <form action="{{route('department.store')}}" method="post">
                         @csrf
                         <div class="mb-5">
-                            <label for="name">Name: </label>
-                            <input type="text" name="name" id="name" class="form-control">
-                            @error('name')
+                            <label for="name">Department Name: </label>
+                            <input type="text" name="dep_name" id="name" class="form-control">
+                            @error('dep_name')
                                 <span class="text-danger">
                                     {{$message}}
                                 </span>
                             @enderror
-                        </div>
-                        <div class="mb-5">
-                            <label for="address">Address: </label>
-                            <textarea name="address" id="address" class="form-control" rows="3"></textarea>
-                            @error('address')
-                                <span class="text-danger">
-                                    {{$message}}
-                                </span>
-                            @enderror
-                        </div>
-                        <div class="mb-5">
-                            <label for="date_of_join">Date of Join: </label>
-                            <input type="date" name="date_of_join" id="date_of_join" required>
                             </div>
-    
                             
                         <div class="mb-5">
                             <button type="submit" class="btn btn-primary">Submit</button>

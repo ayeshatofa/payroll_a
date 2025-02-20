@@ -16,11 +16,9 @@
                     <table class="table table-striped table-bordered">
                         <thead>
                             <tr>
-                                <th>ID</th>
-                                <th>Name</th>
-                                <th>Address</th>
-                                <th>Date Of Join</th>
-                                 <th>Actions</th> 
+                                <th>Department ID</th>
+                                <th>Department Name</th>
+                                
 
                                 
                             </tr>
@@ -28,16 +26,14 @@
                         <tbody>
                             @foreach ($departments as $department) 
                                 <tr>
-                                    <td>{{$employee->emp_id}}</td>
-                                    <td>{{$employee->name}}</td>
-                                    <td>{{$employee->address}}</td>
-                                    <td>{{$employee->date_of_join}}</td>
+                                    <td>{{$department->dep_id}}</td>
+                                    <td>{{$department->dep_name}}</td>
 
                                     {{-- <td>{{$employee->status == true ? 1:0}}</td> --}}
                                     <td>
-                                        <a href="{{route('department.edit', $employee->emp_id)}}" class="btn btn-success">Edit</a>
-                                        <a href="{{route('department.show', $employee->emp_id)}}" class="btn btn-info">Show</a>
-                                        <form action="{{route('department.destroy', $employee->emp_id)}}" method="post" class="d-inline" onsubmit="return confirm('Are you sure to delete this user?')">
+                                        <a href="{{route('department.edit', $department->dep_id)}}" class="btn btn-success">Edit</a>
+                                        <a href="{{route('department.show', $department->dep_id)}}" class="btn btn-info">Show</a>
+                                        <form action="{{route('department.destroy', $department->dep_id)}}" method="post" class="d-inline" onsubmit="return confirm('Are you sure to delete this user?')">
                                             @csrf
                                             @method('DELETE')
                                         <button type="submit" class="btn btn-danger">Delete</button>

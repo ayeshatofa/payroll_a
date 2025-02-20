@@ -19,7 +19,8 @@ return new class extends Migration
             $table->string('address');
             $table->date('date_of_join');
             
-            //$table->foreign('dep_id')->references('dep_id')->on('departments');
+            $table->unsignedBigInteger('dep_id');
+            $table->foreign('dep_id')->references('dep_id')->on('departments')->onDelete('cascade');
            
             $table->timestamps();
         });
